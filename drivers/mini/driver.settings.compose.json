@@ -1,0 +1,11 @@
+[
+    {
+        "id": "default_shutdown",
+        "type": "text",
+        "label": {
+            "en": "Default Shutdown Time",
+            "ru": "Время выключения по умолчанию"
+        },
+        "value": "01:00"
+    }
+]
