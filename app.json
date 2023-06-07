@@ -22,5 +22,268 @@
   "sdk": 3,
   "author": {
     "name": "Alexey Krainev"
-  }
+  },
+  "drivers": [
+    {
+      "name": "Switcher Mini",
+      "models": [
+        "mini"
+      ],
+      "images": {
+        "small": "/drivers/mini/assets/images/small.png",
+        "large": "/drivers/mini/assets/images/large.png",
+        "xlarge": "/drivers/mini/assets/images/xlarge.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "duration": true
+        }
+      },
+      "pair": [
+        {
+          "id": "list_my_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_my_devices"
+          }
+        },
+        {
+          "id": "add_my_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "mini",
+      "settings": [
+        {
+          "id": "default_shutdown",
+          "type": "text",
+          "label": {
+            "en": "Default Shutdown Time",
+            "ru": "Время выключения по умолчанию"
+          },
+          "value": "01:00"
+        }
+      ]
+    },
+    {
+      "name": "Switcher Plug",
+      "models": [
+        "power_plug"
+      ],
+      "images": {
+        "small": "/drivers/power_plug/assets/images/small.png",
+        "large": "/drivers/power_plug/assets/images/large.png",
+        "xlarge": "/drivers/power_plug/assets/images/xlarge.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "duration": true
+        }
+      },
+      "pair": [
+        {
+          "id": "list_my_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_my_devices"
+          }
+        },
+        {
+          "id": "add_my_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "power_plug",
+      "settings": [
+        {
+          "id": "default_shutdown",
+          "type": "text",
+          "label": {
+            "en": "Default Shutdown Time",
+            "ru": "Время выключения по умолчанию"
+          },
+          "value": "01:00"
+        }
+      ]
+    },
+    {
+      "name": "Switcher V2",
+      "models": [
+        "v2_qca",
+        "v2_esp"
+      ],
+      "images": {
+        "small": "/drivers/v2/assets/images/small.png",
+        "large": "/drivers/v2/assets/images/large.png",
+        "xlarge": "/drivers/v2/assets/images/xlarge.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "duration": true
+        }
+      },
+      "pair": [
+        {
+          "id": "list_my_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_my_devices"
+          }
+        },
+        {
+          "id": "add_my_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "v2",
+      "settings": [
+        {
+          "id": "default_shutdown",
+          "type": "text",
+          "label": {
+            "en": "Default Shutdown Time",
+            "ru": "Время выключения по умолчанию"
+          },
+          "value": "01:00"
+        }
+      ]
+    },
+    {
+      "name": "Switcher V3",
+      "models": [
+        "v3"
+      ],
+      "images": {
+        "small": "/drivers/v3/assets/images/small.png",
+        "large": "/drivers/v3/assets/images/large.png",
+        "xlarge": "/drivers/v3/assets/images/xlarge.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "duration": true
+        }
+      },
+      "pair": [
+        {
+          "id": "list_my_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_my_devices"
+          }
+        },
+        {
+          "id": "add_my_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "v3",
+      "settings": [
+        {
+          "id": "default_shutdown",
+          "type": "text",
+          "label": {
+            "en": "Default Shutdown Time",
+            "ru": "Время выключения по умолчанию"
+          },
+          "value": "01:00"
+        }
+      ]
+    },
+    {
+      "name": "Switcher V4",
+      "models": [
+        "v4"
+      ],
+      "images": {
+        "small": "/drivers/v4/assets/images/small.png",
+        "large": "/drivers/v4/assets/images/large.png",
+        "xlarge": "/drivers/v4/assets/images/xlarge.png"
+      },
+      "platforms": [
+        "local"
+      ],
+      "connectivity": [
+        "lan"
+      ],
+      "class": "socket",
+      "capabilities": [
+        "onoff",
+        "measure_power"
+      ],
+      "capabilitiesOptions": {
+        "onoff": {
+          "duration": true
+        }
+      },
+      "pair": [
+        {
+          "id": "list_my_devices",
+          "template": "list_devices",
+          "navigation": {
+            "next": "add_my_devices"
+          }
+        },
+        {
+          "id": "add_my_devices",
+          "template": "add_devices"
+        }
+      ],
+      "id": "v4",
+      "settings": [
+        {
+          "id": "default_shutdown",
+          "type": "text",
+          "label": {
+            "en": "Default Shutdown Time",
+            "ru": "Время выключения по умолчанию"
+          },
+          "value": "01:00"
+        }
+      ]
+    }
+  ]
 }

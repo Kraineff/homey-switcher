@@ -1,6 +1,6 @@
 {
-    "name": "Switcher Mini",
-    "models": ["mini"],
+    "name": "Switcher V3",
+    "models": ["v3"],
     "images": {
         "small": "{{driverAssetsPath}}/images/small.png",
         "large": "{{driverAssetsPath}}/images/large.png",
