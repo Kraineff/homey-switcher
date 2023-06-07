@@ -18,7 +18,7 @@ export default class SwitcherDevice extends Homey.Device {
     }
 
     async onDeleted() {
-        const devices = this.homey.settings.get('devices');
+        const devices = this.homey.settings.get('devices') ?? {};
         delete devices[this._id];
         this.homey.settings.set('devices', devices);
 

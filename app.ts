@@ -12,7 +12,7 @@ module.exports = class SwitcherApp extends Homey.App {
 
             devices[id] = device;
             this.homey.settings.set('devices', devices);
-            this.emit(`state.${id}`, state);
+            this.emit(`switcher.${id}`, state);
         });
     }
 }
