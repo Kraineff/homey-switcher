@@ -1,27 +1,32 @@
 {
     "id": "il.co.switcher",
+    "version": "1.0.0",
+    "compatibility": ">=5.0.0",
+    "platforms": ["local"],
+    "sdk": 3,
+
+    "brandColor": "#E1252C",
     "name": "Switcher",
     "description": {
         "en": "Smart switch for boiler",
         "ru": "Умный выключатель для котла"
     },
-
-    "brandColor": "#E1252C",
+    "category": "appliances",
+    "permissions": [],
     "images": {
         "small": "/assets/images/small.png",
         "large": "/assets/images/large.png",
         "xlarge": "/assets/images/xlarge.png"
     },
 
-    "category": "appliances",
-    "version": "1.0.0",
-    "permissions": [],
-
-    "platforms": ["local"],
-    "compatibility": ">=5.0.0",
-    "sdk": 3,
-
+    "support": "mailto:tolls.gospel-0w@icloud.com",
     "author": {
-        "name": "Alexey Krainev"
+        "name": "Alexey Krainev",
+        "email": "tolls.gospel-0w@icloud.com"
+    },
+
+    "source": "https://github.com/kraineff/homey-switcher",
+    "bugs": {
+        "url": "https://github.com/kraineff/homey-switcher/issues"
     }
 }
