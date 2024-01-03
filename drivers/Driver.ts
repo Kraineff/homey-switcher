@@ -1,8 +1,10 @@
 import Homey from 'homey';
+import SwitcherApp from '../app';
 
 export default class SwitcherDriver extends Homey.Driver {
     async onPairListDevices() {
-        const devices = this.homey.settings.get('devices') ?? {};
+        const app = this.homey.app as SwitcherApp;
+        const devices = app.devices;
         const models = this.manifest.models;
 
         return Object.values<any>(devices)
@@ -10,5 +12,3 @@ export default class SwitcherDriver extends Homey.Driver {
             .map(({ name, device_id }) => ({ name, data: { id: device_id } }));
     }
 }
-
-module.exports = SwitcherDriver;

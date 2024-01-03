@@ -1,18 +1,25 @@
 import Homey from 'homey';
 import Switcher from 'switcher-js2';
 
-module.exports = class SwitcherApp extends Homey.App {
-    async onInit() {
-        const listen = Switcher.listen(() => {});
+export default class SwitcherApp extends Homey.App {
+    #proxy: any;
+    devices: any;
 
-        listen.on('message', message => {
+    async onInit() {
+        this.#proxy = Switcher.listen(() => {});
+        this.devices = {};
+
+        this.#proxy.on('message', message => {
             const { state, ...device } = message;
             const id = device.device_id;
-            const devices = this.homey.settings.get('devices') ?? {};
-
-            devices[id] = device;
-            this.homey.settings.set('devices', devices);
-            this.emit(`switcher.${id}`, state);
+            this.devices[id] = device;
+            this.emit(`state.${id}`, state);
         });
     }
+
+    async onUninit() {
+        this.#proxy.close();
+    }
 }
+
+module.exports = SwitcherApp;

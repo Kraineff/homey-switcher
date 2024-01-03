@@ -1,3 +1,3 @@
-import SwitcherDriver from "../Driver";
+import SwitcherDriver from '../Driver';
 
 module.exports = class SwitcherMiniDriver extends SwitcherDriver {}
