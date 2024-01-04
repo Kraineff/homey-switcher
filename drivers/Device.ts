@@ -24,7 +24,7 @@ export default class SwitcherDevice extends Homey.Device {
         this.#app.off(`state.${this.#id}`, this.#handleState);
     }
 
-    async init() {
+    async init(updateState: boolean = true) {
         if (this.#switcher) return;
         const switchers = this.#app.switchers;
         const switcher = switchers[this.#id];
@@ -34,11 +34,11 @@ export default class SwitcherDevice extends Homey.Device {
             switcher.type, switcher.remote, switcher.token, switcher.device_key);
 
         await this.setAvailable();
-        await this.#handleState(switcher.state);
+        updateState && await this.#handleState(switcher.state);
     }
 
     #handleState = async state => {
-        await this.init();
+        await this.init(false);
         await Promise.all([
             this.#setCapabilityValue('onoff', !!state.power),
             this.#setCapabilityValue('measure_power', state.power_consumption)
