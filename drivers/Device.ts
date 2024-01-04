@@ -29,12 +29,12 @@ export default class SwitcherDevice extends Homey.Device {
         const switchers = this.#app.switchers;
         const switcher = switchers[this.#id];
 
-        if (!switcher)
-            return await this.setUnavailable('Unknown device');
-
+        if (!switcher) return await this.setUnavailable('Unknown device');
         this.#switcher = new Switcher(switcher.device_id, switcher.device_ip, () => {}, false,
             switcher.type, switcher.remote, switcher.token, switcher.device_key);
+
         await this.setAvailable();
+        await this.#handleState(switcher.state);
     }
 
     #handleState = async state => {
