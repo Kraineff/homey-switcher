@@ -1,32 +1,35 @@
 {
-    "id": "il.co.switcher",
-    "version": "1.0.0",
-    "compatibility": ">=5.0.0",
-    "platforms": ["local"],
-    "sdk": 3,
-
-    "brandColor": "#E1252C",
-    "name": "Switcher",
-    "description": {
-        "en": "Smart switch for boiler",
-        "ru": "Умный выключатель для котла"
-    },
-    "category": "appliances",
-    "permissions": [],
-    "images": {
-        "small": "/assets/images/small.png",
-        "large": "/assets/images/large.png",
-        "xlarge": "/assets/images/xlarge.png"
-    },
-
-    "support": "mailto:tolls.gospel-0w@icloud.com",
-    "author": {
-        "name": "Alexey Krainev",
-        "email": "tolls.gospel-0w@icloud.com"
-    },
-
-    "source": "https://github.com/kraineff/homey-switcher",
-    "bugs": {
-        "url": "https://github.com/kraineff/homey-switcher/issues"
-    }
+  "id": "il.co.switcher",
+  "version": "1.0.1",
+  "compatibility": ">=5.0.0",
+  "platforms": [
+    "local"
+  ],
+  "sdk": 3,
+  "brandColor": "#E1252C",
+  "name": {
+    "en": "Switcher"
+  },
+  "description": {
+    "en": "Get rid of unnecessary worries",
+    "ru": "Избавьтесь от лишних забот"
+  },
+  "category": [
+    "appliances"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "support": "mailto:tolls.gospel-0w@icloud.com",
+  "author": {
+    "name": "Alexey Krainev",
+    "email": "tolls.gospel-0w@icloud.com"
+  },
+  "source": "https://github.com/kraineff/homey-switcher",
+  "bugs": {
+    "url": "https://github.com/kraineff/homey-switcher/issues"
+  }
 }

@@ -1,4 +1,4 @@
-Smart switch for boiler.
+Switcher allows you to professionally manage your intelligent device such as boiler heating, curtains, shutters, air conditioning plugs and more.
 
 Supported devices
 -------------
