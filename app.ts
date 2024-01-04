@@ -3,17 +3,16 @@ import Switcher from 'switcher-js2';
 
 export default class SwitcherApp extends Homey.App {
     #proxy: any;
-    devices: any;
+    switchers: any;
 
     async onInit() {
         this.#proxy = Switcher.listen(() => {});
-        this.devices = {};
+        this.switchers = {};
 
         this.#proxy.on('message', message => {
-            const { state, ...device } = message;
-            const id = device.device_id;
-            this.devices[id] = device;
-            this.emit(`state.${id}`, state);
+            const id = message.device_id;
+            this.switchers[id] = message;
+            this.emit(`state.${id}`, message.state);
         });
     }
 

@@ -11,28 +11,34 @@ export default class SwitcherDevice extends Homey.Device {
         this.#id = this.getData().id;
         this.#app = this.homey.app as Switcher;
 
-        await this.setUnavailable('Unknown device');
+        await this.init();        
         this.#app.on(`state.${this.#id}`, this.#handleState);
         this.#registerCapabilities();
     }
 
     async onDeleted() {
-        const devices = this.#app.devices;
-        delete devices[this.#id];
+        const switcher = this.#app.switchers;
+        delete switcher[this.#id];
 
         this.#switcher?.close();
         this.#app.off(`state.${this.#id}`, this.#handleState);
     }
 
-    #handleState = async state => {
-        if (!this.#switcher) {
-            const devices = this.#app.devices;
-            const device = devices[this.#id];
-            this.#switcher = new Switcher(device.device_id, device.device_ip, () => {}, false,
-                device.type, device.remote, device.token, device.device_key);
-            await this.setAvailable();
-        }
+    async init() {
+        if (this.#switcher) return;
+        const switchers = this.#app.switchers;
+        const switcher = switchers[this.#id];
 
+        if (!switcher)
+            return await this.setUnavailable('Unknown device');
+
+        this.#switcher = new Switcher(switcher.device_id, switcher.device_ip, () => {}, false,
+            switcher.type, switcher.remote, switcher.token, switcher.device_key);
+        await this.setAvailable();
+    }
+
+    #handleState = async state => {
+        await this.init();
         await Promise.all([
             this.#setCapabilityValue('onoff', !!state.power),
             this.#setCapabilityValue('measure_power', state.power_consumption)
